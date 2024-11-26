@@ -22,23 +22,38 @@
 
 ![API FLow](./Assets/01-api/API-Flow.jpg)
 
+### API Request Flow
+
+1. Request: The client sends data to the server through an API.
+2. Authentication: The server checks who the user is and verifies their identity.
+3. Authorization: The server checks if the user has permission to use the API.
+4. Validation: If authorized, the server checks if the request data is correct.
+5. Processing: The server processes the request and interacts with the database if needed.
+6. Response :
+   - Success: If everything goes well, the server sends a success response.
+   - Error: If something fails, the server sends an error response.
+
 ## REST APIs
 
 - REST APIs play an important role in ensuring smooth communication between the client and the server.
-- You can think of the client as the front end and the server as the back end.
-- Communication between the client (frontend) and the server (backend) isn't usually super direct. So we use an interface called an **Application Programming Interface (or API)** to act as an intermediary between the client and the server.
-- For Example, A food delivery app uses a restaurant API to fetch menus and prices, then displays them on the user's screen.
+- You can think of the client as the frontend and the server as the backend.
+- They don't talk directly. Instead, they use an API (Application Programming Interface) as a middleman to exchange information.
+- Example: A food delivery app uses a restaurant API to get menu and price details and shows them on your screen.
 
 ### REST
 
-- REST stands for Representational State Transfer.
-- Using Rest Principles improves application in various aspects like Scalability, Reliability...etc
+- **REST** stands for **Representational State Transfer**.
+- Using REST makes applications better by:
+  - Scalability: Handling more users and data easily.
+  - Reliability: Working smoothly and recovering from problems.
+  - Maintainability: Making updates and changes simpler.
+  - Flexibility: Supporting different devices (like web or mobile apps).
 
 ### REST API Principles
 
-- Providing uniqueId to each resource
-- using standard methods like GET, POST, PUT and DELETE
-- Accept and Response with JSON.
+- Unique ID: Each resource should have a unique identifier (URL).
+- Standard Methods: Use standard HTTP methods like GET, POST, PUT, and DELETE.
+- JSON Format: Send requests and responses in JSON format.
 
 </details>
 
@@ -162,13 +177,16 @@ graph TD
 
 ### HTTP Methods (CRUD Operations):
 
-- GET: Retrieve data (safe, idempotent)
+- GET: Retrieve data
 - POST: Create new resources
-- PUT: Update entire resources (idempotent)
-- DELETE: Remove resources (idempotent)
+- PUT: Update entire resources
+- DELETE: Remove resources
 - PATCH: Partial resource updates
 - HEAD: Get headers only
 - OPTIONS: Get supported methods
+
+![HEAD](./Assets/02-http-methods/01-head.png)
+![OPTIONS](./Assets/02-http-methods/02-options.png)
 
 ### Status Code Categories:
 
@@ -182,7 +200,6 @@ graph TD
 
 - Basic Auth: Base64 encoded username:password
 - Bearer Token: JWT or OAuth tokens
-- API Keys: Custom keys in headers/query
 - Session-based: Cookie-based authentication
 - OAuth 2.0: Token-based authorization framework
 
@@ -366,10 +383,8 @@ graph TD
 
 The **request-response cycle** is the process that happens when a client (e.g., browser or mobile app) sends a request to a server (where the website or app data is hosted), and the server responds with the requested data.
 
-```mermaid
-graph TD
-    Client -->|Sends HTTP Request| Server
-    Server -->|Sends HTTP Response| Client
+```html
+
 ```
 
 ### Request Flow
